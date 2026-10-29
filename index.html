@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>אתרים קטנים לעסקים | אתר בהתאמה אישית ב - 200 ₪</title>
+    <meta
+      name="description"
+      content="רוצים אתר יפה ומקצועי לעסק בלי להוציא אלפי שקלים? בניית דפי נחיתה ואתרים קטנים בהתאמה אישית, החל מ־200 ₪."
+    />
+    <meta name="theme-color" content="#f8f7f2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f7f2;
+        --surface: #fffefa;
+        --text: #26372f;
+        --muted: #6d7971;
+        --primary: #287653;
+        --primary-dark: #1c5a3e;
+        --primary-light: #dcefe3;
+        --sand: #f0e7d8;
+        --blue-light: #e8eee8;
+        --line: #e5e7df;
+        --shadow: 0 12px 38px rgba(38, 55, 47, 0.07);
+        --radius: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Heebo", Arial, sans-serif;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(1120px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+      .section {
+        padding: 84px 0;
+      }
+      .section-heading {
+        max-width: 670px;
+        margin: 0 auto 40px;
+        text-align: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 6px 13px;
+        border-radius: 999px;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--primary);
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.25;
+        letter-spacing: -0.035em;
+      }
+      h1 {
+        margin-bottom: 22px;
+        font-size: clamp(38px, 5.2vw, 62px);
+        font-weight: 800;
+      }
+      h2 {
+        margin-bottom: 14px;
+        font-size: clamp(29px, 3.5vw, 41px);
+        font-weight: 800;
+      }
+      h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .muted,
+      .section-heading > p {
+        color: var(--muted);
+      }
+      .section-heading > p {
+        margin-bottom: 0;
+        font-size: 17px;
+      }
+      .accent {
+        color: var(--primary);
+      }
+      .header {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        border-bottom: 1px solid rgba(230, 231, 223, 0.9);
+        background: rgba(248, 247, 242, 0.94);
+        backdrop-filter: blur(14px);
+      }
+      .nav {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 19px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .logo-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 13px;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 21px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        color: #596a64;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--primary-dark);
+      }
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 12px 22px;
+        border: 1px solid transparent;
+        border-radius: 13px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 700;
+        transition:
+          transform 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+      }
+      .button-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 7px 18px rgba(40, 118, 83, 0.18);
+      }
+      .button-primary:hover {
+        background: var(--primary-dark);
+      }
+      .button-secondary {
+        border-color: #d9e0da;
+        background: rgba(255, 254, 250, 0.8);
+        color: var(--text);
+      }
+      .button-secondary:hover {
+        background: white;
+      }
+      .button-small {
+        min-height: 41px;
+        padding: 9px 16px;
+        font-size: 14px;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 82px 0 88px;
+      }
+      .hero:before {
+        position: absolute;
+        top: -80px;
+        right: -150px;
+        width: 390px;
+        height: 390px;
+        border-radius: 50%;
+        background: var(--primary-light);
+        content: "";
+        opacity: 0.8;
+      }
+      .hero:after {
+        position: absolute;
+        bottom: -200px;
+        left: -100px;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: var(--sand);
+        content: "";
+        opacity: 0.7;
+      }
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 64px;
+      }
+      .hero-copy {
+        max-width: 590px;
+      }
+      .hero-description {
+        max-width: 540px;
+        margin-bottom: 27px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .hero-caption {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .hero-caption span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .check {
+        color: #287653;
+        font-weight: 800;
+      }
+      .preview-wrap {
+        position: relative;
+        padding: 12px;
+      }
+      .preview-decoration {
+        position: absolute;
+        z-index: -1;
+        top: -7px;
+        right: -4px;
+        width: 110px;
+        height: 110px;
+        border-radius: 30px;
+        background: var(--sand);
+        transform: rotate(12deg);
+      }
+      .preview {
+        overflow: hidden;
+        border: 1px solid #e4e6df;
+        border-radius: 20px;
+        background: var(--surface);
+        box-shadow: 0 24px 65px rgba(38, 55, 47, 0.12);
+        transform: rotate(-1deg);
+      }
+      .preview-bar {
+        display: flex;
+        height: 39px;
+        align-items: center;
+        gap: 5px;
+        padding: 0 14px;
+        border-bottom: 1px solid #efeee8;
+        background: #fbfaf6;
+      }
+      .preview-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #cdd8d1;
+      }
+      .preview-body {
+        padding: 24px;
+      }
+      .preview-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 28px;
+        font-size: 10px;
+      }
+      .preview-logo {
+        color: var(--primary-dark);
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .preview-nav-lines {
+        display: flex;
+        gap: 9px;
+      }
+      .preview-nav-lines span {
+        width: 28px;
+        height: 4px;
+        border-radius: 5px;
+        background: #dce7df;
+      }
+      .preview-hero {
+        padding: 25px 17px;
+        border-radius: 15px;
+        background: #eaf3ec;
+        text-align: center;
+      }
+      .preview-tag {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 4px 9px;
+        border-radius: 20px;
+        background: #d9eadf;
+        color: #1c5a3e;
+        font-size: 9px;
+      }
+      .preview-hero h3 {
+        margin-bottom: 8px;
+        font-size: 21px;
+      }
+      .preview-hero p {
+        max-width: 230px;
+        margin: 0 auto 15px;
+        color: #718079;
+        font-size: 10px;
+        line-height: 1.8;
+      }
+      .preview-button {
+        display: inline-block;
+        padding: 7px 13px;
+        border-radius: 8px;
+        background: var(--primary);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .preview-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+        margin-top: 14px;
+      }
+      .preview-card {
+        min-height: 77px;
+        padding: 12px 8px;
+        border: 1px solid #efeee8;
+        border-radius: 11px;
+        text-align: center;
+      }
+      .preview-icon {
+        display: grid;
+        width: 25px;
+        height: 25px;
+        place-items: center;
+        margin: 0 auto 8px;
+        border-radius: 8px;
+        background: var(--sand);
+        font-size: 12px;
+      }
+      .preview-card:nth-child(2) .preview-icon {
+        background: var(--blue-light);
+      }
+      .preview-card:nth-child(3) .preview-icon {
+        background: var(--primary-light);
+      }
+      .preview-card span:last-child {
+        display: block;
+        color: #5d6b64;
+        font-size: 9px;
+      }
+      .preview-footer {
+        width: 45%;
+        height: 5px;
+        margin: 18px auto 0;
+        border-radius: 5px;
+        background: #dce7df;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 19px;
+      }
+      .card {
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 5px 20px rgba(38, 58, 54, 0.025);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .card-icon {
+        display: grid;
+        width: 49px;
+        height: 49px;
+        place-items: center;
+        margin-bottom: 21px;
+        border-radius: 15px;
+        background: var(--primary-light);
+        font-size: 23px;
+      }
+      .card:nth-child(2) .card-icon {
+        background: var(--sand);
+      }
+      .card:nth-child(3) .card-icon {
+        background: var(--blue-light);
+      }
+      .card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .services-section {
+        background: #f0f1eb;
+      }
+      .service-card {
+        border-color: rgba(255, 254, 250, 0.8);
+      }
+      .service-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+        margin-top: 25px;
+        padding: 18px 21px;
+        border: 1px solid #e0e4db;
+        border-radius: 16px;
+        background: rgba(255, 254, 250, 0.75);
+        color: #596a64;
+        font-size: 14px;
+      }
+      .service-note-icon {
+        font-size: 20px;
+      }
+      .service-note p {
+        margin: 0;
+      }
+      .pricing-card {
+        max-width: 690px;
+        margin: 0 auto;
+        padding: 38px;
+        border: 1px solid #e1e6de;
+        border-radius: 27px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .pricing-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+      .pricing-label {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 5px 11px;
+        border-radius: 9px;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .pricing-top h3 {
+        margin-bottom: 8px;
+        font-size: 25px;
+      }
+      .pricing-top p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .price {
+        flex-shrink: 0;
+        color: var(--primary-dark);
+        font-size: 42px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 1.2;
+      }
+      .price small {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0;
+        text-align: center;
+      }
+      .included-title {
+        margin: 24px 0 15px;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .included-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px 20px;
+        margin: 0 0 26px;
+        padding: 0;
+        list-style: none;
+      }
+      .included-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        color: #5f6d66;
+        font-size: 14px;
+      }
+      .included-list .check {
+        flex-shrink: 0;
+      }
+      .pricing-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .pricing-action .button {
+        width: 100%;
+      }
+      .pricing-disclaimer {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 28px;
+      }
+      .process-step {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        align-items: start;
+        gap: 18px;
+        padding: 25px 0;
+        border-bottom: 1px solid #e0e3dc;
+      }
+      .step-number {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 14px;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 19px;
+        font-weight: 800;
+      }
+      .process-step:nth-child(2) .step-number {
+        background: var(--sand);
+      }
+      .process-step:nth-child(3) .step-number {
+        background: var(--blue-light);
+      }
+      .process-step:nth-child(4) .step-number {
+        background: #e9e9dc;
+        color: #64704f;
+      }
+      .process-step h3 {
+        margin: 1px 0 8px;
+        font-size: 18px;
+      }
+      .process-step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.85;
+      }
+      .process-step p a {
+        color: var(--primary-dark);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .faq-list {
+        display: grid;
+        max-width: 790px;
+        gap: 12px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
+      }
+      .faq-item summary {
+        position: relative;
+        padding: 19px 22px;
+        padding-left: 48px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        list-style: none;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary:after {
+        position: absolute;
+        left: 21px;
+        color: var(--primary);
+        content: "+";
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .faq-item[open] summary:after {
+        content: "−";
+      }
+      .faq-answer {
+        padding: 0 22px 20px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      .faq-answer p {
+        margin: 0;
+      }
+      .contact-section {
+        padding-top: 25px;
+      }
+      .contact-panel {
+        position: relative;
+        overflow: hidden;
+        padding: 54px 30px;
+        border: 1px solid #dce1f5;
+        border-radius: 28px;
+        background: #e9ecfb;
+        text-align: center;
+      }
+      .contact-panel:before,
+      .contact-panel:after {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+      .contact-panel:before {
+        top: -105px;
+        right: -45px;
+        background: rgba(255, 254, 250, 0.65);
+      }
+      .contact-panel:after {
+        bottom: -130px;
+        left: -40px;
+        background: rgba(240, 231, 216, 0.85);
+      }
+      .contact-content {
+        position: relative;
+        z-index: 1;
+        max-width: 630px;
+        margin: 0 auto;
+      }
+      .contact-panel h2 {
+        margin-bottom: 15px;
+      }
+      .contact-panel p {
+        margin-bottom: 25px;
+        color: #62736a;
+        font-size: 16px;
+      }
+      .contact-panel .button {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 7px 18px rgba(40, 118, 83, 0.18);
+      }
+      .contact-panel .button:hover {
+        background: var(--primary-dark);
+      }
+      .contact-caption {
+        display: block;
+        margin-top: 14px;
+        color: #6f7b76;
+        font-size: 12px;
+      }
+      .footer {
+        padding: 25px 0;
+        border-top: 1px solid var(--line);
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .footer-brand {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .footer-link {
+        color: var(--primary-dark);
+        font-weight: 600;
+      }
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 15px;
+        }
+        .hero-grid {
+          gap: 30px;
+        }
+        .hero {
+          padding: 65px 0 70px;
+        }
+        .cards {
+          gap: 13px;
+        }
+        .card {
+          padding: 23px;
+        }
+      }
+      @media (max-width: 680px) {
+        .container {
+          width: min(100% - 32px, 520px);
+        }
+        .section {
+          padding: 62px 0;
+        }
+        .nav {
+          min-height: 66px;
+          gap: 10px;
+        }
+        .logo {
+          gap: 8px;
+          font-size: 16px;
+        }
+        .logo-mark {
+          width: 34px;
+          height: 34px;
+          border-radius: 11px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .nav > .button {
+          min-height: 39px;
+          padding: 8px 12px;
+          font-size: 13px;
+        }
+        .hero {
+          padding: 49px 0 55px;
+        }
+        .hero-grid {
+          display: block;
+        }
+        .hero-copy {
+          max-width: 100%;
+        }
+        .hero h1 {
+          margin-bottom: 17px;
+          font-size: clamp(36px, 9.3vw, 47px);
+        }
+        .hero-description {
+          margin-bottom: 23px;
+          font-size: 16px;
+          line-height: 1.85;
+        }
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .hero-actions .button {
+          width: 100%;
+        }
+        .hero-caption {
+          gap: 9px 14px;
+          margin-top: 18px;
+          font-size: 12px;
+        }
+        .preview-wrap {
+          display: none;
+        }
+        .section-heading {
+          margin-bottom: 29px;
+        }
+        .section-heading > p {
+          font-size: 15px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+          gap: 13px;
+        }
+        .card {
+          padding: 23px;
+        }
+        .card-icon {
+          width: 44px;
+          height: 44px;
+          margin-bottom: 15px;
+        }
+        .card h3 {
+          font-size: 19px;
+        }
+        .card p {
+          font-size: 14px;
+        }
+        .service-note {
+          padding: 15px;
+          font-size: 13px;
+        }
+        .pricing-card {
+          padding: 25px 20px;
+          border-radius: 22px;
+        }
+        .pricing-top {
+          flex-direction: column;
+          gap: 16px;
+        }
+        .pricing-top h3 {
+          font-size: 22px;
+        }
+        .price {
+          font-size: 40px;
+        }
+        .price small {
+          text-align: right;
+        }
+        .included-list {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .process-grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .process-step {
+          grid-template-columns: 48px 1fr;
+          gap: 14px;
+          padding: 22px 0;
+        }
+        .step-number {
+          width: 42px;
+          height: 42px;
+        }
+        .process-step h3 {
+          font-size: 17px;
+        }
+        .contact-section {
+          padding-top: 5px;
+        }
+        .contact-panel {
+          padding: 39px 20px;
+          border-radius: 22px;
+        }
+        .contact-panel p {
+          font-size: 15px;
+        }
+        .footer-inner {
+          flex-direction: column;
+          gap: 7px;
+          text-align: center;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="#home" aria-label="חזרה לראש העמוד"
+          ><span class="logo-mark" aria-hidden="true">✳</span
+          ><span>אתר לעסק</span></a
+        >
+        <nav class="nav-links" aria-label="ניווט ראשי">
+          <a href="#services">מה מקבלים?</a><a href="#pricing">מחיר</a
+          ><a href="#process">איך זה עובד?</a><a href="#faq">שאלות נפוצות</a>
+        </nav>
+        <a
+          class="button button-primary button-small whatsapp-link"
+          href="#contact"
+          >בואו נדבר <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>אתרים קטנים, בהתאמה אישית
+            </div>
+            <h1>לעסק שלך מגיע אתר <span class="accent">שנראה מעולה.</span></h1>
+            <p class="hero-description">
+              אתר אישי, מעוצב ומותאם לעסק שלכם — בלי להסתבך ובלי להוציא אלפי
+              שקלים. ספרו לי מה אתם צריכים, ונבנה יחד אתר שמתאים לכם.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary whatsapp-link" href="#contact"
+                >בואו נדבר<span aria-hidden="true">↗</span></a
+              >
+              <a class="button button-secondary" href="#pricing"
+                >לראות את המחיר <span aria-hidden="true">↓</span></a
+              >
+            </div>
+            <div class="hero-caption">
+              <span><span class="check">✓</span> עיצוב אישי</span
+              ><span><span class="check">✓</span> התאמה לנייד</span
+              ><span><span class="check">✓</span> תקשורת ישירה</span>
+            </div>
+          </div>
+          <div class="preview-wrap" aria-hidden="true">
+            <div class="preview-decoration"></div>
+            <div class="preview">
+              <div class="preview-bar">
+                <span class="preview-dot"></span
+                ><span class="preview-dot"></span
+                ><span class="preview-dot"></span>
+              </div>
+              <div class="preview-body">
+                <div class="preview-nav">
+                  <span class="preview-logo">העסק שלי ✳</span>
+                  <div class="preview-nav-lines">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="preview-hero">
+                  <span class="preview-tag">נעים להכיר</span>
+                  <h3>העסק שלכם,<br />בדיוק כמו שדמיינתם.</h3>
+                  <p>אתר יפה, ברור ונוח שמציג את העסק שלכם לעולם.</p>
+                  <span class="preview-button">בואו נדבר ←</span>
+                </div>
+                <div class="preview-cards">
+                  <div class="preview-card">
+                    <span class="preview-icon">✦</span><span>עיצוב אישי</span>
+                  </div>
+                  <div class="preview-card">
+                    <span class="preview-icon">♡</span><span>יחס אישי</span>
+                  </div>
+                  <div class="preview-card">
+                    <span class="preview-icon">↗</span><span>נוח לשימוש</span>
+                  </div>
+                </div>
+                <div class="preview-footer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">מה אפשר לבנות?</div>
+            <h2>אתר שמתאים <span class="accent">בדיוק לצורך שלכם.</span></h2>
+            <p>
+              לא צריך אתר ענק ומסובך כדי להציג את העסק בצורה מקצועית. מתחילים
+              ממה שבאמת נחוץ.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">✦</div>
+              <h3>דף נחיתה לעסק</h3>
+              <p>
+                עמוד אחד מעוצב שמציג את השירותים, מסביר מה מיוחד בעסק ומעודד
+                לקוחות לפנות אליכם.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">▦</div>
+              <h3>אתר תדמית קטן</h3>
+              <p>
+                מקום מסודר להציג את העסק, השירותים, התמונות ופרטי ההתקשרות —
+                בעיצוב שמותאם לאופי שלכם.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">✉</div>
+              <h3>טפסים ויצירת קשר</h3>
+              <p>
+                אפשר לשלב באתר טופס פנייה פשוט, כפתור WhatsApp, קישורים לרשתות
+                חברתיות ודרכים נוחות ליצור קשר.
+              </p>
+            </article>
+          </div>
+          <div class="service-note">
+            <span class="service-note-icon" aria-hidden="true">💡</span>
+            <p>
+              <strong>יש לכם רעיון קצת אחר?</strong> ספרו לי עליו. נבין יחד מה
+              אפשר לבנות ומה יתאים לצרכים ולתקציב שלכם.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">בלי הפתעות</div>
+            <h2>אתר משלכם, ב - <span class="accent">200 ₪.</span></h2>
+            <p>דרך נגישה להתחיל להציג את העסק שלכם גם באינטרנט.</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-top">
+              <div>
+                <span class="pricing-label">מחיר התחלתי</span>
+                <h3>דף נחיתה בהתאמה אישית</h3>
+                <p>עמוד אחד, בעיצוב שמתאים לעסק שלכם.</p>
+              </div>
+              <div class="price">200 ₪<small>לעמוד אחד</small></div>
+            </div>
+            <p class="included-title">מה כלול?</p>
+            <ul class="included-list">
+              <li><span class="check">✓</span> עיצוב בהתאמה אישית</li>
+              <li><span class="check">✓</span> התאמה למחשב ולטלפון</li>
+              <li><span class="check">✓</span> הצגת השירותים והמידע שלכם</li>
+              <li><span class="check">✓</span> כפתורי יצירת קשר</li>
+              <li><span class="check">✓</span> אפשרות לטופס פשוט</li>
+              <li><span class="check">✓</span> תקשורת אישית לאורך התהליך</li>
+            </ul>
+            <div class="pricing-action">
+              <a class="button button-primary whatsapp-link" href="#contact"
+                ><span aria-hidden="true"></span> רוצה להתחיל - בואו נדבר<span
+                  aria-hidden="true"
+                  >↗</span
+                ></a
+              >
+              <p class="pricing-disclaimer">
+                המחיר מתייחס לדף נחיתה אחד. תוספות או דרישות מיוחדות יתומחרו
+                בנפרד, בתיאום מראש.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="process">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">תהליך העבודה</div>
+            <h2>מהרעיון ועד <span class="accent">שהאתר באוויר.</span></h2>
+            <p>
+              מתקדמים יחד, בשקיפות ובתיאום, כדי להגיע לתוצאה שמתאימה לעסק שלכם.
+            </p>
+          </div>
+          <div class="process-grid">
+            <article class="process-step">
+              <div class="step-number">01</div>
+              <div>
+                <h3>מסכמים מראש</h3>
+                <p>
+                  נדבר על העסק, נגדיר מה האתר צריך לכלול, איך אתם רוצים שהוא
+                  יעוצב, ונסכם את המחיר.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <div class="step-number">02</div>
+              <div>
+                <h3>אני מעצבת את דף הבית שלכם</h3>
+                <p>
+                  אעצב את דף הבית ואחבר את התכנים והשפה הוויזואלית לעיצוב שלם.
+                  נעבור עליו יחד, תגידו מה אהבתם ומה תרצו לשנות, ואבצע את
+                  ההתאמות.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <div class="step-number">03</div>
+              <div>
+                <h3>אהבתם? ממשיכים.</h3>
+                <p>
+                  אחרי אישור העיצוב ותיאום התשלום, אמשיך לבניית האתר ולשאר
+                  העמודים שסיכמנו — עד שהכול מוכן לעלות לאוויר.
+                </p>
+              </div>
+            </article>
+            <article class="process-step">
+              <div class="step-number">04</div>
+              <div>
+                <h3>ואם זה לא זה?</h3>
+                <p>
+                  ננסה להבין מה חסר ולדייק את הכיוון. אם עדיין מתלבטים, אפשר
+                  להמשיך לדבר ולבדוק מה מתאים.
+                  <a class="whatsapp-link" href="#contact">בואו נדבר</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">כדאי לדעת</div>
+            <h2>שאלות <span class="accent">נפוצות</span></h2>
+            <p>כל מה שחשוב לדעת לפני שמתחילים.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>האם האתר יתאים גם לטלפון?</summary>
+              <div class="faq-answer">
+                <p>
+                  כן. העיצוב נבנה כך שיהיה נוח לקריאה ולשימוש גם במסכים קטנים,
+                  בנוסף למחשבים.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>האם אפשר להוסיף טופס פנייה?</summary>
+              <div class="faq-answer">
+                <p>
+                  כן, אפשר לשלב טופס פשוט בהתאם לצורך. אם נדרשת מערכת מיוחדת,
+                  נבדוק מראש מה היא דורשת והאם יש עלויות נוספות.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>האם 200 ₪ כוללים גם דומיין ואחסון?</summary>
+              <div class="faq-answer">
+                <p>
+                  המחיר הבסיסי הוא עבור בניית דף הנחיתה עצמו. דומיין אישי, אחסון
+                  בתשלום ושירותים חיצוניים, אם יידרשו, אינם כלולים במחיר. אפשר
+                  לבדוק יחד אפשרויות לפרסום האתר ללא עלות חודשית.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>איך מתחילים?</summary>
+              <div class="faq-answer">
+                <p>
+                  פשוט שולחים הודעה ב־WhatsApp, מספרים לי קצת על העסק ועל מה
+                  שדמיינתם, ונבדוק יחד איך אפשר להתקדם.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-brand">אתר לעסק ✳</span
+        ><span>אתרים קטנים, עם מחשבה על כל פרט.</span
+        ><a class="footer-link" href="#home">חזרה לראש העמוד ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      // החליפי את המספר למספר ה-WhatsApp שלך בפורמט בינלאומי.
+      // לדוגמה: 050-1234567 נכתב כך: 972501234567
+      // ללא +, רווחים או מקפים.
+      const WHATSAPP_NUMBER = "972507356339";
+      const whatsappMessage =
+        "היי! הגעתי דרך האתר ואשמח לשמוע עוד על בניית אתר לעסק.";
+
+      document.querySelectorAll(".whatsapp-link").forEach((link) => {
+        if (!/^972\d{8,10}$/.test(WHATSAPP_NUMBER)) {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            alert(
+              "כדי להפעיל את כפתורי ה-WhatsApp, יש להכניס את מספר הטלפון שלך בקוד האתר.",
+            );
+          });
+          link.setAttribute("href", "#contact");
+          return;
+        }
+        link.setAttribute(
+          "href",
+          "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(whatsappMessage),
+        );
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      });
+    </script>
+  </body>
+</html>
